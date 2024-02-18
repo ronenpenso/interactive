@@ -1,0 +1,64 @@
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="./assets/css/style.css" />
+<script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+
+<script type="module">
+const loading = document.getElementById('loading');
+addEventListener('py:ready', () => loading.close());
+loading.showModal();
+</script>
+
+<title>Interactive Video Player</title>
+</head>
+<body>
+
+<dialog id="loading">
+<i class="w3-jumbo w3-spin fa fa-refresh"></i>
+</dialog>
+
+<div class="w3-panel">
+
+<input type="hidden" id="debug" value="N">
+
+<input type="hidden" id="video_main" _url="what_do_you_like_more.mp4"></ectiosn>
+<input type="hidden" id="video_1" _url="i_like_coffee.mp4"></section>
+<input type="hidden" id="video_2" _url="i_like_tea.mp4"></section>
+
+<div class="video-view">
+<div class="w3-center w3-xlarge w3-blue-gray">What do you like more ?</div>
+
+<video controlslist="nodownload noplaybackrate" id="player" type="video/mp4" class="video" poster="./assets/images/poster.png" playsinline></video>
+<div id="video_content" class="video-content" py-click="PYSCR.click">
+
+<input type="button" class="w3-button w3-red w3-round-large" style="left:13px;top:140px;width:110px;height:203;opacity:0.1"
+       _title="Coffee" _url="video_1" _ref="video_main" _visible="5" _hidden="11">
+
+<input type="button" class="w3-button w3-green w3-round-large w3-text-black" style="left:194px;top:140px;width:110px;height:203;opacity:0.1"
+       _title="Tea" _url="video_2" _ref="video_main" _visible="5" _hidden="11">
+
+<input type="button" class="w3-button w3-red w3-round-large w3-text-black" style="left:10px;top:500px;width:300px;height:40;opacity:0.9;font-weight:bolder"
+       _title="Restart" _url="video_main" _ref="video_1" _visible="4" _hidden="11" value="Restart">
+
+<input type="button" class="w3-button fa fa-input w3-xxlarge w3-red" style="left:130px;top:400px;"
+       _title="Read about coffe" _url="https://en.wikipedia.org/wiki/Coffee" _ref="video_1" _visible="0" _hidden="11" value="&#xf1c2">
+
+<input type="button" class="w3-button w3-green w3-round-large w3-text-black" style="left:10px;top:500px;width:300px;height:40;opacity:0.9;font-weight:bolder"
+       _title="Restart" _url="video_main" _ref="video_2" _visible="4" _hidden="11" value="Restart">
+
+<input type="button" class="w3-button fa fa-input w3-xxlarge w3-green" style="left:130px;top:400px;"
+       _title="Read about tea" _url="https://en.wikipedia.org/wiki/Tea" _ref="video_2" _visible="0" _hidden="11" value="&#xf1c2">
+
+</div>
+
+</div>
+
+<script type="py" src="./main.py" config="./pyscript.toml"></script>
+
+</div>
+
+</body>
+</html>
