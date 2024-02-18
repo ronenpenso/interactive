@@ -1,0 +1,42 @@
+/* for splashscreen */
+#loading {
+    outline: none;
+    border: none;
+    opacity: 0.9;
+}
+
+.video-view {
+    position: absolute;
+    width: 320px;
+    height: 570px;
+    left: 50%;
+    margin-left: -160px;
+}
+
+.video-view .video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-view .video-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+video::-webkit-media-controls-fullscreen-button {
+    display: none;
+}
+
+input[type=button] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:absolute;
+    cursor:pointer;
+    visibility:hidden;
+}
+
+
