@@ -32,7 +32,7 @@ class VideoHotSpot:
         """
         cursor.close()
         connection.commit()
-
+        """
         self.player = document.getElementById("player")
         self.player.addEventListener("timeupdate", create_proxy(self.time_update))
         self.load_main_video()
@@ -41,7 +41,7 @@ class VideoHotSpot:
         if debugElem.value.upper() == "Y":
             self.debug = True
             self.init_buttons_visibility(True)
-
+        """
     def time_update(self, event):
         buttons = document.getElementById('video_content').getElementsByTagName('input')
         for button in buttons:
