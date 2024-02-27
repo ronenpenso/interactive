@@ -1,3 +1,6 @@
 name = "Video Hot Spot"
+packages = ["sqlite3"]
 
+[files]
+"./aquarium.db" = ""
 

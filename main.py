@@ -2,6 +2,7 @@ from js import document
 from pyodide.ffi import create_proxy
 import webbrowser
 import re
+import sqlite3 as sql
 from pyscript import display
 
 
@@ -11,6 +12,22 @@ class VideoHotSpot:
     debug = False
 
     def __init__(self):
+        connection = sql.connect("aquarium.db")
+        cursor = connection.cursor()
+
+        rows = cursor.execute("SELECT name, species, tank_number FROM fish").fetchall()
+        display(rows)
+        """
+        target_fish_name = "Jamie"
+        rows = cursor.execute(
+            "SELECT name, species, tank_number FROM fish WHERE name = ?",
+            (target_fish_name,),
+        ).fetchall()
+        display(rows)
+        """
+        cursor.close()
+        connection.commit()
+
         self.player = document.getElementById("player")
         self.player.addEventListener("timeupdate", create_proxy(self.time_update))
         self.load_main_video()
