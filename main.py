@@ -1,4 +1,5 @@
 from js import document
+from js import alert
 from pyodide.ffi import create_proxy
 import webbrowser
 import re
@@ -16,11 +17,7 @@ class VideoHotSpot:
         cursor = connection.cursor()
 
         rows = cursor.execute("SELECT name, species, tank_number FROM fish").fetchall()
-        display("hi")
-        display("hi")
-        display("hi")
-        display("hi")
-        display(rows)
+        alert(rows)
 
         """
         target_fish_name = "Jamie"
@@ -32,7 +29,7 @@ class VideoHotSpot:
         """
         cursor.close()
         connection.commit()
-        """
+
         self.player = document.getElementById("player")
         self.player.addEventListener("timeupdate", create_proxy(self.time_update))
         self.load_main_video()
@@ -41,7 +38,7 @@ class VideoHotSpot:
         if debugElem.value.upper() == "Y":
             self.debug = True
             self.init_buttons_visibility(True)
-        """
+
     def time_update(self, event):
         buttons = document.getElementById('video_content').getElementsByTagName('input')
         for button in buttons:
