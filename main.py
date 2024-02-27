@@ -17,6 +17,11 @@ class VideoHotSpot:
 
         rows = cursor.execute("SELECT name, species, tank_number FROM fish").fetchall()
         display(rows)
+        display(rows)
+        display(rows)
+        display(rows)
+        display(rows)
+
         """
         target_fish_name = "Jamie"
         rows = cursor.execute(
