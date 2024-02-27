@@ -16,10 +16,10 @@ class VideoHotSpot:
         cursor = connection.cursor()
 
         rows = cursor.execute("SELECT name, species, tank_number FROM fish").fetchall()
-        display(rows)
-        display(rows)
-        display(rows)
-        display(rows)
+        display("hi")
+        display("hi")
+        display("hi")
+        display("hi")
         display(rows)
 
         """
